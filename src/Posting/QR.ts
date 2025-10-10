@@ -2122,7 +2122,8 @@ class post {
         img = undefined // just in case the file size shrinkage also needs to run using the new file
         new Notice('warning',
           `Image was too large got shrunk from ${originalW} * ${originalH} to ${width} * ${height}.` +
-          'It might have lost animation.'
+          'It might have lost animation.',
+          5
         );
       }
 
@@ -2131,7 +2132,8 @@ class post {
           file = await QR.convert(file, 'jpeg', { maxSize, img });
           new Notice('warning',
             `Image was too large (${$.bytesToString(originalSize)}) and got converted to jpg (` +
-            `${$.bytesToString(file.size)}). It might have lost transparency or animation.`
+            `${$.bytesToString(file.size)}). It might have lost transparency or animation.`,
+            5
           );
       }
     } else if (file.size > maxSize) {
