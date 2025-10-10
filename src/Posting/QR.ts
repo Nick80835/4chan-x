@@ -1304,12 +1304,12 @@ var QR = {
     }
 
     let newFile: File;
-    let quality = .9;
+    let quality = .96;
 
     canvas.getContext("2d").drawImage(img, 0, 0, width, height);
     do {
       newFile = new File([await toBlob(mime, quality)], newName, { type: mime });
-      quality -= .1;
+      quality -= .03;
     } while (type === 'jpeg' && newFile.size > maxSize && quality >= .1);
 
     if (newFile.size >= file.size && newFile.type === file.type) {
