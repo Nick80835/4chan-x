@@ -85,8 +85,8 @@
   'use strict';
 
   var version = {
-    "version": "2.24.1",
-    "date": "2025-05-17T18:20:00Z"
+    "version": "2.24.2",
+    "date": "2025-12-17T14:55:56.00Z"
   };
 
   var meta = {
@@ -94,7 +94,7 @@
    "path": "4chan-XT",
    "fork": "TuxedoTako",
    "page": "https://github.com/TuxedoTako/4chan-xt",
-   "downloads": "https://github.com/TuxedoTako/4chan-xt/releases",
+   "downloads": "https://github.com/Nick80835/4chan-x/raw/refs/heads/project-XT/builds",
    "oldVersions": "https://raw.githubusercontent.com/ccd0/4chan-x/",
    "faq": "https://github.com/TuxedoTako/4chan-xt/wiki/Frequently-Asked-Questions",
    "upstreamFaq": "https://github.com/ccd0/4chan-x/wiki/Frequently-Asked-Questions",
@@ -6520,7 +6520,7 @@ svg.icon {
           response[key] = $(`[name='${key}']`, this.nodes.container).value;
         }
       }
-      if (!response['t-response'] && !((el = $('#t-msg')) && /Verification not required/i.test(el.textContent))) {
+      if (!response['t-response'] && !((el = $('#t-msg, #t-task')) && /Verification not required/i.test(el.textContent))) {
         response = null;
       }
       return response;
@@ -9509,9 +9509,8 @@ svg.icon {
         ExpandComment.callbacks.push(this.node);
       }
 
-      // \u00A0 is nbsp
       this.mark = $.el('span', {
-        textContent: '\u00A0(You)',
+        textContent: ' (You)',
         className:   'qmark-you'
       }
       );
@@ -18033,11 +18032,11 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
         });
       }
       let newFile;
-      let quality = .9;
+      let quality = .96;
       canvas.getContext("2d").drawImage(img, 0, 0, width, height);
       do {
         newFile = new File([await toBlob(mime, quality)], newName, { type: mime });
-        quality -= .1;
+        quality -= .03;
       } while (type === 'jpeg' && newFile.size > maxSize && quality >= .1);
       if (newFile.size >= file.size && newFile.type === file.type) {
         new Notice('warning', "New jpeg file isn't smaller than the old one, so it won't be used.", 3);
@@ -18789,13 +18788,13 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
           file = await QR.convert(file, file.type === 'image/jpeg' ? 'jpeg' : 'png', { width, height, img });
           img = undefined; // just in case the file size shrinkage also needs to run using the new file
           new Notice('warning', `Image was too large got shrunk from ${originalW} * ${originalH} to ${width} * ${height}.` +
-            'It might have lost animation.');
+            'It might have lost animation.', 5);
         }
         if (file.size > maxSize) {
           const originalSize = file.size;
           file = await QR.convert(file, 'jpeg', { maxSize, img });
           new Notice('warning', `Image was too large (${$.bytesToString(originalSize)}) and got converted to jpg (` +
-            `${$.bytesToString(file.size)}). It might have lost transparency or animation.`);
+            `${$.bytesToString(file.size)}). It might have lost transparency or animation.`, 5);
         }
       } else if (file.size > maxSize) {
         throw new Error(`File too large (file: ${$.bytesToString(file.size)}, max: ${$.bytesToString(maxSize)}).`);
