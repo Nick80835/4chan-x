@@ -130,8 +130,18 @@ export default class Post {
       }
     }
 
-    const name = this.nodes.name?.textContent;
-    const tripcode = this.nodes.tripcode?.textContent;
+    // hopefully temporary fix for 4chan desktop html containing no tripcode for some fuckass reason
+    const name_trip = this.nodes.name?.textContent.match(/(.*)(?:^| )(!!?.{10,11})$/);
+    var name: string;
+    var tripcode: string;
+
+    if (!name_trip || name_trip.length == 0) {
+      name = this.nodes.name?.textContent;
+      tripcode = this.nodes.tripcode?.textContent;
+    } else {
+      name = name_trip[1];
+      tripcode = name_trip[2];
+    }
 
     this.info = {
       subject:   this.nodes.subject?.textContent || undefined,

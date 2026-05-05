@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         4chan XT
-// @version      2.24.3
+// @version      2.24.4
 // @minGMVer     1.14
 // @minFFVer     78
 // @namespace    4chan-XT
@@ -169,8 +169,8 @@
   'use strict';
 
   var version = {
-    "version": "2.24.3",
-    "date": "2026-5-5T00:00:00.00Z"
+    "version": "2.24.4",
+    "date": "2026-5-6T00:00:00.00Z"
   };
 
   var meta = {
@@ -8309,8 +8309,17 @@ svg.icon {
           this.thread.kill();
         }
       }
-      const name = this.nodes.name?.textContent;
-      const tripcode = this.nodes.tripcode?.textContent;
+      // hopefully temporary fix for 4chan desktop html containing no tripcode for some fuckass reason
+      const name_trip = this.nodes.name?.textContent.match(/(.*)(?:^| )(!!?.{10,11})$/);
+      var name;
+      var tripcode;
+      if (!name_trip || name_trip.length == 0) {
+        name = this.nodes.name?.textContent;
+        tripcode = this.nodes.tripcode?.textContent;
+      } else {
+        name = name_trip[1];
+        tripcode = name_trip[2];
+      }
       this.info = {
         subject: this.nodes.subject?.textContent || undefined,
         name,
