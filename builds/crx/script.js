@@ -85,8 +85,8 @@
   'use strict';
 
   var version = {
-    "version": "2.24.2",
-    "date": "2025-12-17T14:55:56.00Z"
+    "version": "2.24.3",
+    "date": "2026-5-5T00:00:00.00Z"
   };
 
   var meta = {
@@ -8473,8 +8473,7 @@ svg.icon {
   // because of a circular dependency $ might not be initialized, so we can't use $.el
   Post.deadMark = (() => {
     const el = document.createElement('span');
-    // \u00A0 is nbsp
-    el.textContent = '\u00A0(Dead)';
+    el.textContent = ' (Dead)';
     el.className = 'qmark-dead';
     return el;
   })();
@@ -19688,7 +19687,7 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
         isArchived: '.archivedIcon'
       },
       file: {
-        text: '.file > :first-child',
+        text: '.file > .fileText',
         link: '.fileText > a',
         thumb: 'a.fileThumb > [data-md5]'
       },
@@ -25134,9 +25133,8 @@ Enable it on boards.${location.hostname.split('.')[1]}.org in your browser's pri
         ExpandComment.callbacks.push(this.node);
       }
 
-      // \u00A0 is nbsp
       this.mark = $.el('span', {
-        textContent: '\u00A0(Cross-thread)',
+        textContent: ' (Cross-thread)',
         className:   'qmark-ct'
       }
       );
@@ -25171,9 +25169,8 @@ Enable it on boards.${location.hostname.split('.')[1]}.org in your browser's pri
         ExpandComment.callbacks.push(this.node);
       }
 
-      // \u00A0 is nbsp
       this.mark = $.el('span', {
-        textContent: '\u00A0(OP)',
+        textContent: ' (OP)',
         className:   'qmark-op'
       }
       );

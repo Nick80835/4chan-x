@@ -17,9 +17,8 @@ var QuoteOP = {
       ExpandComment.callbacks.push(this.node);
     }
 
-    // \u00A0 is nbsp
     this.mark = $.el('span', {
-      textContent: '\u00A0(OP)',
+      textContent: ' (OP)',
       className:   'qmark-op'
     }
     );

@@ -17,9 +17,8 @@ var QuoteCT = {
       ExpandComment.callbacks.push(this.node);
     }
 
-    // \u00A0 is nbsp
     this.mark = $.el('span', {
-      textContent: '\u00A0(Cross-thread)',
+      textContent: ' (Cross-thread)',
       className:   'qmark-ct'
     }
     );

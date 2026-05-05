@@ -84,8 +84,7 @@ export default class Post {
   // because of a circular dependency $ might not be initialized, so we can't use $.el
   static deadMark = (() => {
     const el = document.createElement('span');
-    // \u00A0 is nbsp
-    el.textContent = '\u00A0(Dead)';
+    el.textContent = ' (Dead)';
     el.className = 'qmark-dead';
     return el;
   })();
