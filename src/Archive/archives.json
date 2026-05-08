@@ -35,9 +35,8 @@
   "http": false,
   "https": true,
   "software": "foolfuuka",
-  "boards": ["cm", "co", "ic", "sci", "vip", "y"],
-  "files": ["cm", "co", "ic", "sci", "vip", "y"],
-  "search": ["cm", "co", "ic", "sci", "y"]
+  "boards": ["cm", "sci", "y"],
+  "files": ["cm", "sci", "y"]
 }, {
   "uid": 25,
   "name": "not arch.b4k.co",
@@ -88,15 +87,5 @@
   "software": "foolfuuka",
   "boards": ["bant", "c", "con", "e", "i", "n", "news", "out", "p", "pw", "qst", "toy", "vip", "vp", "vt", "w", "wg", "wsr"],
   "files": ["bant", "c", "e", "i", "n", "news", "out", "p", "pw", "qst", "toy", "vip", "vp", "vt", "w", "wg", "wsr"],
-  "reports": true
-}, {
-  "uid": 37,
-  "name": "Eientei",
-  "domain": "eientei.xyz",
-  "http": false,
-  "https": true,
-  "software": "Eientei",
-  "boards": ["3", "i", "sci", "xs"],
-  "files": ["3", "i", "sci", "xs"],
   "reports": true
 }]
