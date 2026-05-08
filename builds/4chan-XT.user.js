@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         4chan XT
-// @version      2.24.4
+// @version      2.24.5
 // @minGMVer     1.14
 // @minFFVer     78
 // @namespace    4chan-XT
@@ -169,8 +169,8 @@
   'use strict';
 
   var version = {
-    "version": "2.24.4",
-    "date": "2026-5-6T00:00:00.00Z"
+    "version": "2.24.5",
+    "date": "2026-5-8T00:00:00.00Z"
   };
 
   var meta = {
@@ -23398,7 +23398,7 @@ Enable it on boards.${location.hostname.split('.')[1]}.org in your browser's pri
           return '';
         }
       }
-      if (archive.name.endsWith('arch.b4k.co')) {
+      if (archive.domain.endsWith('arch.b4k.co') || archive.domain.endsWith('palanq.win') || archive.domain.endsWith('desuarchive.org')) {
         const [timeStamp, ext] = filename.split('.');
         if (timeStamp.length > 13) {
           // remove last 3 digits
