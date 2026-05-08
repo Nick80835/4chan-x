@@ -191,7 +191,7 @@ var Redirect = {
     } else {
       if (/[sm]\.jpg$/.test(filename)) { return ''; }
     }
-    if (archive.domain.endsWith('arch.b4k.co') || archive.domain.endsWith('palanq.win') || archive.domain.endsWith('desuarchive.org')) {
+    if (archive.domain.endsWith('arch.b4k.dev') || archive.domain.endsWith('palanq.win') || archive.domain.endsWith('desuarchive.org')) {
       const [timeStamp, ext] = filename.split('.');
       if (timeStamp.length > 13) {
         // remove last 3 digits
