@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         4chan XT
-// @version      2.24.5
+// @version      2.24.6
 // @minGMVer     1.14
 // @minFFVer     78
 // @namespace    4chan-XT
@@ -23,8 +23,6 @@
 // @include      https://lainchan.org/*
 // @include      https://www.lainchan.org/*
 // @include      https://merorin.com/*
-// @include      https://ota-ch.com/*
-// @include      https://www.ota-ch.com/*
 // @include      https://ponyville.us/*
 // @include      https://www.ponyville.us/*
 // @include      https://smuglo.li/*
@@ -36,6 +34,10 @@
 // @include      https://sushigirl.us/*
 // @include      https://www.sushigirl.us/*
 // @include      https://tvch.moe/*
+// @include      https://wizchan.org/*
+// @include      https://www.wizchan.org/*
+// @include      https://bantculture.com/*
+// @include      https://www.bantculture.com/*
 // @exclude      https://www.4chan.org/advertise
 // @exclude      https://www.4chan.org/advertise?*
 // @exclude      https://www.4chan.org/donate
@@ -54,7 +56,6 @@
 // @connect      thebarchive.com
 // @connect      archiveofsins.com
 // @connect      archive.palanq.win
-// @connect      eientei.xyz
 // @connect      api.clyp.it
 // @connect      api.dailymotion.com
 // @connect      api.github.com

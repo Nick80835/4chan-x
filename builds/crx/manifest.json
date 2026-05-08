@@ -1,6 +1,6 @@
 {
   "name": "4chan XT",
-  "version": "2.24.5",
+  "version": "2.24.6",
   "manifest_version": 2,
   "description": "4chan XT is a script that adds various features to anonymous imageboards.",
   "icons": {
@@ -27,8 +27,6 @@
         "https://lainchan.org/*",
         "https://www.lainchan.org/*",
         "https://merorin.com/*",
-        "https://ota-ch.com/*",
-        "https://www.ota-ch.com/*",
         "https://ponyville.us/*",
         "https://www.ponyville.us/*",
         "https://smuglo.li/*",
@@ -39,7 +37,11 @@
         "https://www.sportschan.org/*",
         "https://sushigirl.us/*",
         "https://www.sushigirl.us/*",
-        "https://tvch.moe/*"
+        "https://tvch.moe/*",
+        "https://wizchan.org/*",
+        "https://www.wizchan.org/*",
+        "https://bantculture.com/*",
+        "https://www.bantculture.com/*"
       ],
       "exclude_matches": [
         "https://www.4chan.org/advertise",
@@ -79,8 +81,6 @@
     "https://lainchan.org/*",
     "https://www.lainchan.org/*",
     "https://merorin.com/*",
-    "https://ota-ch.com/*",
-    "https://www.ota-ch.com/*",
     "https://ponyville.us/*",
     "https://www.ponyville.us/*",
     "https://smuglo.li/*",
@@ -92,6 +92,10 @@
     "https://sushigirl.us/*",
     "https://www.sushigirl.us/*",
     "https://tvch.moe/*",
+    "https://wizchan.org/*",
+    "https://www.wizchan.org/*",
+    "https://bantculture.com/*",
+    "https://www.bantculture.com/*",
     "storage"
   ],
   "optional_permissions": [

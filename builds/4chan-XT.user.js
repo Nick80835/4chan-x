@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         4chan XT
-// @version      2.24.5
+// @version      2.24.6
 // @minGMVer     1.14
 // @minFFVer     78
 // @namespace    4chan-XT
@@ -23,8 +23,6 @@
 // @include      https://lainchan.org/*
 // @include      https://www.lainchan.org/*
 // @include      https://merorin.com/*
-// @include      https://ota-ch.com/*
-// @include      https://www.ota-ch.com/*
 // @include      https://ponyville.us/*
 // @include      https://www.ponyville.us/*
 // @include      https://smuglo.li/*
@@ -36,6 +34,10 @@
 // @include      https://sushigirl.us/*
 // @include      https://www.sushigirl.us/*
 // @include      https://tvch.moe/*
+// @include      https://wizchan.org/*
+// @include      https://www.wizchan.org/*
+// @include      https://bantculture.com/*
+// @include      https://www.bantculture.com/*
 // @exclude      https://www.4chan.org/advertise
 // @exclude      https://www.4chan.org/advertise?*
 // @exclude      https://www.4chan.org/donate
@@ -54,7 +56,6 @@
 // @connect      thebarchive.com
 // @connect      archiveofsins.com
 // @connect      archive.palanq.win
-// @connect      eientei.xyz
 // @connect      api.clyp.it
 // @connect      api.dailymotion.com
 // @connect      api.github.com
@@ -169,8 +170,8 @@
   'use strict';
 
   var version = {
-    "version": "2.24.5",
-    "date": "2026-5-8T00:00:00.00Z"
+    "version": "2.24.6",
+    "date": "2026-5-9T00:00:00.00Z"
   };
 
   var meta = {
@@ -7327,7 +7328,7 @@ svg.icon {
             }
             break;
           case 40: // Down
-            if (next = this.findNextEntry(entry, +1)) {
+            if (next = this.findNextEntry(entry, 1)) {
               this.focus(next);
             }
             break;
@@ -7679,7 +7680,7 @@ svg.icon {
       if (g.VIEW === 'thread') {
         return window.scrollTo(0, d.body.scrollHeight);
       } else {
-        return Nav.scroll(+1);
+        return Nav.scroll(1);
       }
     },
 
@@ -7700,7 +7701,7 @@ svg.icon {
       d.activeElement?.blur();
       let thread = Nav.getThread();
       if (!thread) { return; }
-      const axis = delta === +1 ?
+      const axis = delta === 1 ?
         'following'
       :
         'preceding';
@@ -7709,7 +7710,7 @@ svg.icon {
         // and thus wanting to move to beginning,
         // or we're above the first thread and don't want to skip it.
         const top = Header.getTopOf(thread);
-        if (((delta === +1) && (top < 5)) || ((delta === -1) && (top > -5))) { thread = next; }
+        if (((delta === 1) && (top < 5)) || ((delta === -1) && (top > -5))) { thread = next; }
       }
       // Add extra space to the end of the page if necessary so that all threads can be selected by keybinds.
       const extra = (Header.getTopOf(thread) + doc.clientHeight) - d.body.getBoundingClientRect().bottom;
@@ -16459,7 +16460,7 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
       }
       // Thread Navigation
       if (key === Conf['Next thread'] && g.VIEW === 'index' && threadRoot) {
-        Nav.scroll(+1);
+        Nav.scroll(1);
         hasAction = true;
       }
       if (key === Conf['Previous thread'] && g.VIEW === 'index' && threadRoot) {
@@ -16482,7 +16483,7 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
       }
       // Reply Navigation
       if (key === Conf['Next reply'] && threadRoot) {
-        Keybinds.hl(+1, threadRoot);
+        Keybinds.hl(1, threadRoot);
         hasAction = true;
       }
       if (key === Conf['Previous reply'] && threadRoot) {
@@ -16500,7 +16501,7 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
       }
       if (key === Conf['Quick Filter MD5'] && threadRoot) {
         post = Keybinds.post(threadRoot);
-        Keybinds.hl(+1, threadRoot);
+        Keybinds.hl(1, threadRoot);
         Filter.quickFilterMD5.call(post, e);
         hasAction = true;
       }
@@ -16643,13 +16644,13 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
         if ((Header.getTopOf(postEl) >= -height) && (Header.getBottomOf(postEl) >= -height)) { // We're at least partially visible
           let next;
           const {root} = Get.postFromNode(postEl).nodes;
-          const axis = delta === +1 ?
+          const axis = delta === 1 ?
             'following'
           :
             'preceding';
           if (!(next = $.x(`${axis}-sibling::${g.SITE.xpath.replyContainer}[not(@hidden) and not(child::div[@class='stub'])][1]`, root))) { return; }
           if (!next.matches(replySelector)) { next = $(replySelector, next); }
-          Header.scrollToIfNeeded(next, delta === +1);
+          Header.scrollToIfNeeded(next, delta === 1);
           $.addClass(next, highlight);
           $.rmClass(postEl, highlight);
           return;
@@ -16660,7 +16661,7 @@ aero|asia|biz|cat|com|coop|dance|info|int|jobs|mobi|moe|museum|name|net|org|post
       const replies = $$(replySelector, thread);
       if (delta === -1) { replies.reverse(); }
       for (var reply of replies) {
-        if (((delta === +1) && (Header.getTopOf(reply) > 0)) || ((delta === -1) && (Header.getBottomOf(reply) > 0))) {
+        if (((delta === 1) && (Header.getTopOf(reply) > 0)) || ((delta === -1) && (Header.getBottomOf(reply) > 0))) {
           $.addClass(reply, highlight);
           return;
         }
@@ -23150,9 +23151,8 @@ Enable it on boards.${location.hostname.split('.')[1]}.org in your browser's pri
     "http": false,
     "https": true,
     "software": "foolfuuka",
-    "boards": ["cm", "co", "ic", "sci", "vip", "y"],
-    "files": ["cm", "co", "ic", "sci", "vip", "y"],
-    "search": ["cm", "co", "ic", "sci", "y"]
+    "boards": ["cm", "sci", "y"],
+    "files": ["cm", "sci", "y"]
   }, {
     "uid": 25,
     "name": "not arch.b4k.co",
@@ -23203,16 +23203,6 @@ Enable it on boards.${location.hostname.split('.')[1]}.org in your browser's pri
     "software": "foolfuuka",
     "boards": ["bant", "c", "con", "e", "i", "n", "news", "out", "p", "pw", "qst", "toy", "vip", "vp", "vt", "w", "wg", "wsr"],
     "files": ["bant", "c", "e", "i", "n", "news", "out", "p", "pw", "qst", "toy", "vip", "vp", "vt", "w", "wg", "wsr"],
-    "reports": true
-  }, {
-    "uid": 37,
-    "name": "Eientei",
-    "domain": "eientei.xyz",
-    "http": false,
-    "https": true,
-    "software": "Eientei",
-    "boards": ["3", "i", "sci", "xs"],
-    "files": ["3", "i", "sci", "xs"],
     "reports": true
   }]
   ;
@@ -23398,7 +23388,7 @@ Enable it on boards.${location.hostname.split('.')[1]}.org in your browser's pri
           return '';
         }
       }
-      if (archive.domain.endsWith('arch.b4k.co') || archive.domain.endsWith('palanq.win') || archive.domain.endsWith('desuarchive.org')) {
+      if (archive.domain.endsWith('arch.b4k.dev') || archive.domain.endsWith('palanq.win') || archive.domain.endsWith('desuarchive.org')) {
         const [timeStamp, ext] = filename.split('.');
         if (timeStamp.length > 13) {
           // remove last 3 digits
