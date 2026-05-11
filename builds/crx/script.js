@@ -85,8 +85,8 @@
   'use strict';
 
   var version = {
-    "version": "2.24.6",
-    "date": "2026-5-9T00:00:00.00Z"
+    "version": "2.24.7",
+    "date": "2026-5-11T00:00:00.00Z"
   };
 
   var meta = {

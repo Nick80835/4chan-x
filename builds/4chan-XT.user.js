@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         4chan XT
-// @version      2.24.6
+// @version      2.24.7
 // @minGMVer     1.14
 // @minFFVer     78
 // @namespace    4chan-XT
@@ -31,8 +31,8 @@
 // @include      https://smug.nepu.moe/*
 // @include      https://sportschan.org/*
 // @include      https://www.sportschan.org/*
-// @include      https://sushigirl.us/*
-// @include      https://www.sushigirl.us/*
+// @include      https://sushigirl.cafe/*
+// @include      https://www.sushigirl.cafe/*
 // @include      https://tvch.moe/*
 // @include      https://wizchan.org/*
 // @include      https://www.wizchan.org/*
@@ -170,8 +170,8 @@
   'use strict';
 
   var version = {
-    "version": "2.24.6",
-    "date": "2026-5-9T00:00:00.00Z"
+    "version": "2.24.7",
+    "date": "2026-5-11T00:00:00.00Z"
   };
 
   var meta = {
