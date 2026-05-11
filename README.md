@@ -48,19 +48,19 @@ feature, see upstream 4chan X's [privacy documentation](https://github.com/ccd0/
 
 ## Install
 
-To run an user script, you need an user script manager like Violentmonkey
+To run a userscript, you'll need a userscript manager like Violentmonkey
 \([Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag),
 [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/),
-[Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)), or tampermonkey
+[Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)), or Tampermonkey
 \([Chrome](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo),
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/),
 [Edge](https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd),
 [Safari](https://apps.apple.com/app/tampermonkey/id6738342400)).
 
-This fork is distributed through [GitHub releases](https://github.com/TuxedoTako/4chan-xt/releases) and [Greasy Fork](https://greasyfork.org/scripts/489508-4chan-xt).
-There are known issues with updating user scripts through GitHub: [#34](https://github.com/TuxedoTako/4chan-xt/issues/34)
+This fork of this fork is distributed through [this very dumb GitHub directory](https://github.com/Nick80835/4chan-xt/tree/project-XT/builds) and nowhere else right now. Typically, you'll just wanna install the latest minified version of this script by opening [this file](https://github.com/Nick80835/4chan-xt/raw/refs/heads/project-XT/builds/4chan-XT.min.user.js) in your browser and letting your userscript manager pick it up.
+There are known issues with updating userscripts through GitHub: [#34](https://github.com/TuxedoTako/4chan-xt/issues/34)
 [violentmonkey#1673](https://github.com/violentmonkey/violentmonkey/issues/1673), but Greasy Fork doesn't allow the
-minified version. Automatic updates are supported for the user script version, but not the Chrome extension.
+minified version. Automatic updates are supported for the userscript version, but not the Chrome extension.
 
 ## Build from source
 
@@ -74,18 +74,16 @@ The simplest build is as easy as `npm install` `npm run build`, but there are so
 - `-test` Include tests in build.
 
 ## Troubleshooting
-If you encounter a bug, try the steps [here](https://github.com/TuxedoTako/4chan-xt/blob/project-XT/CONTRIBUTING.md#reporting-bugs),
-then report it to the [issue tracker](https://github.com/TuxedoTako/4chan-xt/issues?q=is%3Aopen+sort%3Aupdated-desc).
-If the bug seems to be caused by a script update, you can install a old version from the
-[GitHub releases](https://github.com/TuxedoTako/4chan-xt/releases) or from
-[Greasy Fork](https://greasyfork.org/scripts/489508-4chan-xt/versions).
+If you encounter a bug, try the steps [here](https://github.com/Nick80835/4chan-xt/blob/project-XT/CONTRIBUTING.md#reporting-bugs),
+then report it to the [issue tracker](https://github.com/Nick80835/4chan-xt/issues?q=is%3Aopen+sort%3Aupdated-desc).
+If the bug seems to be caused by a script update, you can install an old version from NOWHERE or check out [this other fork I guess](https://github.com/nick-s-b/4chan-xt).
 
 ## More information
-- [Changelog](https://github.com/TuxedoTako/4chan-xt/blob/project-XT/CHANGELOG.md)
+- [Changelog](https://github.com/Nick80835/4chan-xt/blob/project-XT/CHANGELOG.md)
 - [Frequently Asked Questions for this fork](https://github.com/TuxedoTako/4chan-xt/wiki/Frequently-Asked-Questions)
 - [Frequently Asked Questions for upstream, most should still apply](https://github.com/ccd0/4chan-x/wiki/Frequently-Asked-Questions)
-- [Report Bugs](https://github.com/TuxedoTako/4chan-xt/issues?q=is%3Aopen+sort%3Aupdated-desc)
-- [Contributing](https://github.com/TuxedoTako/4chan-xt/blob/project-XT/CONTRIBUTING.md)
+- [Report Bugs](https://github.com/Nick80835/4chan-xt/issues?q=is%3Aopen+sort%3Aupdated-desc)
+- [Contributing](https://github.com/Nick80835/4chan-xt/blob/project-XT/CONTRIBUTING.md)
 
 ### TODO
 

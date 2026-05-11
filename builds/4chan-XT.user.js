@@ -5,7 +5,7 @@
 // @minFFVer     78
 // @namespace    4chan-XT
 // @description  4chan XT is a script that adds various features to anonymous imageboards.
-// @license      MIT; https://github.com/TuxedoTako/4chan-xt/blob/project-XT/LICENSE
+// @license      MIT; https://github.com/Nick80835/4chan-xt/blob/project-XT/LICENSE
 // @include      https://boards.4chan.org/*
 // @include      https://sys.4chan.org/*
 // @include      https://www.4chan.org/*
@@ -78,8 +78,8 @@
 // @grant        GM.openInTab
 // @grant        GM.xmlHttpRequest
 // @run-at       document-start
-// @updateURL    https://github.com/Nick80835/4chan-x/raw/refs/heads/project-XT/builds/4chan-XT.meta.js
-// @downloadURL  https://github.com/Nick80835/4chan-x/raw/refs/heads/project-XT/builds/4chan-XT.user.js
+// @updateURL    https://github.com/Nick80835/4chan-xt/raw/refs/heads/project-XT/builds/4chan-XT.meta.js
+// @downloadURL  https://github.com/Nick80835/4chan-xt/raw/refs/heads/project-XT/builds/4chan-XT.user.js
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAACVBMVEUAAGcAAABmzDNZt9VtAAAAAXRSTlMAQObYZgAAAF5JREFUeNrtkTESABAQxPD/R6tsE2dUGYUtFJvLDKf93KevHJAjpBorAQWSBIKqFASC4G0pCAkm4GfaEvgYXl0T6HBaE97f0vmnfYHbZOMLZCx9ISdKWwjOWZSC8GYm4SUGwfYgqI4AAAAASUVORK5CYII=
 // @license      MIT
 // ==/UserScript==
@@ -177,18 +177,18 @@
   var meta = {
    "name": "4chan XT",
    "path": "4chan-XT",
-   "fork": "TuxedoTako",
-   "page": "https://github.com/TuxedoTako/4chan-xt",
-   "downloads": "https://github.com/Nick80835/4chan-x/raw/refs/heads/project-XT/builds",
+   "fork": "Nick80835",
+   "page": "https://github.com/Nick80835/4chan-xt",
+   "downloads": "https://github.com/Nick80835/4chan-xt/raw/refs/heads/project-XT/builds",
    "oldVersions": "https://raw.githubusercontent.com/ccd0/4chan-x/",
    "faq": "https://github.com/TuxedoTako/4chan-xt/wiki/Frequently-Asked-Questions",
    "upstreamFaq": "https://github.com/ccd0/4chan-x/wiki/Frequently-Asked-Questions",
    "captchaFAQ": "https://github.com/ccd0/4chan-x/wiki/Captcha-FAQ",
    "cssGuide": "https://github.com/ccd0/4chan-x/wiki/Styling-Guide",
-   "license": "https://github.com/TuxedoTako/4chan-xt/blob/project-XT/LICENSE",
-   "changelog": "https://github.com/TuxedoTako/4chan-xt/blob/project-XT/CHANGELOG.md",
-   "issues": "https://github.com/TuxedoTako/4chan-xt/issues",
-   "newIssue": "https://github.com/TuxedoTako/4chan-xt/issues",
+   "license": "https://github.com/Nick80835/4chan-xt/blob/project-XT/LICENSE",
+   "changelog": "https://github.com/Nick80835/4chan-xt/blob/project-XT/CHANGELOG.md",
+   "issues": "https://github.com/Nick80835/4chan-xt/issues",
+   "newIssue": "https://github.com/Nick80835/4chan-xt/issues",
    "newIssueMaxLength": 8181,
    "alternatives": "https://www.4chan-x.net/4chan_alternatives.html",
    "appid": "lacclbnghgdicfifcamcmcnilckjamag",
